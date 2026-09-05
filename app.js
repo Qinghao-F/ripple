@@ -1,6 +1,6 @@
 const app = document.querySelector('#app');
 const toast = document.querySelector('#toast');
-const asset = (name) => `../Ripple_Component_Library/assets/${name}`;
+const asset = (name) => `Ripple_Component_Library/assets/${name}`;
 const avatar = (seed, color = 'f5b092') => `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(seed)}&backgroundColor=${color}`;
 const icon = (name) => `<i class="iconoir-${name}" aria-hidden="true"></i>`;
 const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
