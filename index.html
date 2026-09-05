@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FFFCF3" />
+    <meta name="description" content="Interactive Ripple mobile app demo" />
+    <title>Ripple · Interactive Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/iconoir@7.11.0/css/iconoir.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Ripple_Component_Library/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="ios-shell.css" />
+  </head>
+  <body>
+    <div class="demo-stage">
+      <div class="device" aria-label="Ripple interactive mobile app demo">
+        <div class="phone-shell">
+          <div class="phone-statusbar" aria-label="iPhone status bar">
+            <span class="status-time">9:41</span>
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <span class="status-icons" aria-hidden="true"><i class="status-signal"></i><i class="status-wifi"></i><i class="status-battery"></i></span>
+          </div>
+          <div class="device-screen ripple-app" id="app" aria-live="polite"></div>
+          <div class="phone-home-area" aria-hidden="true"><span class="home-indicator"></span></div>
+        </div>
+      </div>
+      <aside class="demo-note" aria-label="Demo guide">
+        <img src="../Ripple_Component_Library/assets/ripple-wordmark.png" alt="Ripple" />
+        <p>Interactive mobile demo</p>
+        <small>Try 0412 345 678 and code 123456 to begin.</small>
+      </aside>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
