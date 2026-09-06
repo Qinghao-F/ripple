@@ -7,6 +7,8 @@ body{min-height:100vh;background:var(--sun);padding:32px 16px;color:var(--ink)}
   width: 340px !important;
   height: 220px !important;
   max-width: none !important;
+  transform: scale(1.45) !important;
+  transform-origin: center top !important;
   margin-top: 26px !important;
   margin-bottom: 16px !important;
 }
@@ -20,6 +22,34 @@ body{min-height:100vh;background:var(--sun);padding:32px 16px;color:var(--ink)}
 }
 
 .ripple-app .phone-entry-screen .form-foot {
+  transform: translateY(-28px);
+}
+
+/* Match the verification screen to the phone-number entry screen. */
+.ripple-app .verification-screen .wordmark-large {
+  width: 340px !important;
+  height: 220px !important;
+  max-width: none !important;
+  margin-top: 26px !important;
+  margin-bottom: 16px !important;
+  transform: scale(1.45) !important;
+  transform-origin: center top !important;
+}
+
+.ripple-app .verification-screen h1 {
+  margin-top: 28px !important;
+}
+
+.ripple-app .verification-screen .form-stack {
+  margin-top: 40px !important;
+}
+
+.ripple-app .verification-screen .form-stack > .text-action {
+  align-self: flex-start !important;
+  text-align: left;
+}
+
+.ripple-app .verification-screen .form-foot {
   transform: translateY(-28px);
 }
 .ripple-app>.screen{position:absolute!important;inset:0!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;margin:0!important}.ripple-app .welcome,.ripple-app .screen-scroll,.ripple-app .form-stack,.ripple-app .form-foot,.ripple-app .otp{width:100%;min-width:0;max-width:100%}.ripple-app .welcome h1,.ripple-app .welcome>p{width:100%;max-width:100%}.ripple-app .otp input{width:100%;min-width:0}
