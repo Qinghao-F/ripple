@@ -228,3 +228,106 @@ body { padding: 24px 16px; background: var(--sun); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Figma registration flow alignment: measurements are relative to the 390 x 844 frame. */
+.ripple-app .welcome .wordmark-large {
+  width: 236px !important;
+  height: 136px !important;
+  max-width: 236px !important;
+  margin-top: 50px !important;
+  margin-bottom: 16px !important;
+  transform: none !important;
+}
+.ripple-app .welcome h1 {
+  width: 100% !important;
+  max-width: 340px !important;
+  margin-top: 36px !important;
+  margin-bottom: 10px !important;
+}
+.ripple-app .welcome .privacy-copy { margin-bottom: 0 !important; }
+.ripple-app .phone-entry-screen .form-stack { margin-top: 72px !important; }
+.ripple-app .verification-screen .form-stack { margin-top: 55px !important; }
+.ripple-app .phone-entry-screen .form-foot,
+.ripple-app .verification-screen .form-foot { transform: translateY(-24px) !important; }
+.ripple-app .verification-screen h1 { margin-bottom: 12px !important; }
+
+.ripple-app .contacts-scroll .illustration {
+  height: 230px !important;
+  margin-top: 8px !important;
+  margin-bottom: 28px !important;
+}
+.ripple-app .contacts-scroll .permission-copy { margin-top: 28px !important; }
+.ripple-app .contacts-scroll .form-foot { transform: translateY(-7px) !important; }
+
+.ripple-app .identity-scroll .intro-copy,
+.ripple-app .basics-scroll .intro-copy,
+.ripple-app .interests-scroll .intro-copy { margin-top: 29px !important; }
+.ripple-app .identity-scroll .identity-card {
+  min-height: 418px !important;
+  box-sizing: border-box;
+  margin-top: 25px !important;
+}
+.ripple-app .identity-scroll .form-foot {
+  transform: none !important;
+  padding-top: 29px !important;
+}
+
+.ripple-app .basics-scroll .form-stack {
+  margin-top: 0 !important;
+  padding-top: 40px !important;
+}
+.ripple-app .basics-scroll .form-stack > .field:first-child {
+  min-height: 101px !important;
+  box-sizing: border-box;
+  display: block;
+}
+.ripple-app .basics-scroll .form-stack > .field:first-child > span {
+  display: block;
+  line-height: 16px;
+}
+.ripple-app .basics-scroll .form-stack > .field:first-child .date-picker-trigger {
+  height: 48px;
+  margin-top: 7px;
+}
+.ripple-app .basics-scroll .form-stack > .field:nth-child(2) .option-list { margin-top: 9px !important; }
+.ripple-app .basics-scroll .form-foot {
+  transform: none !important;
+  padding-top: 116px !important;
+}
+
+.ripple-app .interests-scroll .intro-copy {
+  min-height: 102px;
+  box-sizing: border-box;
+}
+.ripple-app .interests-scroll .bubble-field {
+  position: relative;
+  display: block;
+  height: 327px;
+  margin-top: 9.8px !important;
+  margin-bottom: 19.4px;
+}
+.ripple-app .interests-scroll .bubble-field .bubble {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 10px;
+  line-height: 16px;
+}
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(1) { left: 19px; top: 77.2px; width: 73px; height: 73px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(2) { left: 76px; top: 7.2px; width: 106px; height: 102px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(3) { left: 233px; top: 9.2px; width: 100px; height: 97px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(4) { left: 25px; top: 156.2px; width: 53px; height: 54px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(5) { left: 92px; top: 135.2px; width: 74px; height: 73px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(6) { left: 170px; top: 73.2px; width: 75px; height: 75px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(7) { left: 276px; top: 107.2px; width: 70px; height: 68px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(8) { left: 15px; top: 235.2px; width: 82px; height: 81px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(9) { left: 105px; top: 210.2px; width: 74px; height: 72px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(10) { left: 186px; top: 150.2px; width: 76px; height: 76px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(11) { left: 268px; top: 183.2px; width: 85px; height: 86px; }
+.ripple-app .interests-scroll .bubble-field .bubble:nth-child(12) { left: 184px; top: 232.2px; width: 88px; height: 88px; }
+.ripple-app .interests-scroll .form-foot {
+  transform: none !important;
+  padding-top: 58px !important;
+}
