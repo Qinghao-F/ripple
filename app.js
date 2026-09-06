@@ -227,4 +227,43 @@ app.addEventListener('click', (event) => {
   }
 }, true);
 
+const renderSheetWithoutJoinConfirmation = renderSheet;
+renderSheet = function renderSheetWithJoinConfirmation() {
+  if (state.sheet === 'confirm-join') {
+    return `<div class="sheet-backdrop"><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="confirm-join-title"><h2 id="confirm-join-title">Join this activity?</h2><p>After confirming, you’ll join this activity and be redirected to group discussion.</p>${primary('Confirm & Join', 'confirm-join')}${secondary('Not now', 'close-sheet')}</section></div>`;
+  }
+  return renderSheetWithoutJoinConfirmation();
+};
+
+app.addEventListener('click', (event) => {
+  const target = event.target.closest('[data-action]');
+  if (!target || target.disabled) return;
+
+  if (target.dataset.action === 'join') {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    state.sheet = 'confirm-join';
+    render();
+    return;
+  }
+
+  if (target.dataset.action === 'confirm-join') {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    state.sheet = null;
+    state.joining = true;
+    render();
+    window.setTimeout(() => {
+      const activity = activityById(state.selectedActivity);
+      activity.joined += 1;
+      state.joined.add(activity.id);
+      state.currentChat = activity.id;
+      state.joining = false;
+      state.screen = 'chat';
+      notify('Activity joined · group is ready');
+      render();
+    }, 650);
+  }
+}, true);
+
 render();
