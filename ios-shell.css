@@ -196,6 +196,30 @@ body { padding: 24px 16px; background: var(--sun); }
 .ripple-app .poster-card h3 { font-size: 13px; line-height: 17px; overflow-wrap: anywhere; }
 .ripple-app .poster-card p { font-size: 9px; line-height: 14px; overflow-wrap: anywhere; }
 .ripple-app .poster-card footer { font-size: 8px; line-height: 12px; }
+.ripple-app .filter-row { align-items:start; padding-top:8px; padding-bottom:9px; }
+.ripple-app .filter-row:not(.chat-filter) button { min-height:58px; height:58px; padding:0; border:0; box-shadow:none; background:transparent; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:4px; font-size:9px; font-weight:600; color:var(--ink); }
+.ripple-app .filter-row:not(.chat-filter) .filter-orb { width:25px; height:25px; border:0; border-radius:0; background:transparent; display:grid; place-items:center; color:#0e1720; }
+.ripple-app .filter-row:not(.chat-filter) button.active { color:var(--red); }
+.ripple-app .filter-row:not(.chat-filter) button.active .filter-orb { background:transparent; color:var(--red); }
+.ripple-app .filter-row:not(.chat-filter) button.active > span:last-child { position:relative; }
+.ripple-app .filter-row:not(.chat-filter) button.active > span:last-child::after { content:""; position:absolute; left:50%; bottom:-6px; transform:translateX(-50%); width:28px; height:2px; background:var(--red); border-radius:999px; }
+.ripple-app .filter-orb .poster-icon { width:22px; height:22px; stroke-width:2; display:block; }
+.ripple-app .filter-orb .poster-icon--fire { width:22px; height:22px; stroke-width:1.5; }
+.ripple-app .filter-orb .poster-icon--fire .fire-shape { fill:currentColor; stroke:currentColor; }
+.ripple-app .filter-orb .poster-icon--fire path:last-child { stroke:#fff7f2; }
+.ripple-app .poster-card { position:relative; }
+.ripple-app .poster-label { position:absolute; top:14px; left:14px; min-height:24px; display:inline-flex; align-items:center; gap:4px; padding:0 9px; border-radius:999px; background:rgba(255,249,247,.94); color:var(--red-dark); font-size:8px; font-weight:800; box-shadow:0 2px 6px rgba(51,36,17,.08); }
+.ripple-app .poster-label.event { color:#2446c3; background:rgba(239,242,255,.94); }
+.ripple-app .poster-label i { font-size:12px; }
+.ripple-app .poster-label .poster-icon { width:14px; height:14px; flex:0 0 14px; stroke-width:2.35; }
+.ripple-app .poster-card .event-link { display:flex; align-items:center; gap:4px; color:#1f50d4; margin-top:3px; }
+.ripple-app .poster-card .poster-meta { display:grid !important; grid-template-columns:14px minmax(0,1fr); align-items:center; column-gap:5px; }
+.ripple-app .poster-card .poster-meta .poster-icon { display:block; width:15px; height:15px; color:#59667d; stroke-width:2.45; }
+.ripple-app .poster-card .poster-meta .poster-icon .calendar-bar { fill:currentColor; stroke:none; }
+.ripple-app .poster-card footer { justify-content:flex-start; }
+.ripple-app .poster-card footer span { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ripple-app .poster-card footer b { margin-left:auto; white-space:nowrap; font-weight:500; }
+.ripple-app .poster-card footer b .poster-icon { vertical-align:-2px; width:14px; height:14px; margin-right:3px; stroke-width:2.3; }
 
 /* Fixed iOS hit areas, while retaining the compact Ripple visual treatment. */
 .ripple-app button,
