@@ -4,8 +4,9 @@ body{min-height:100vh;background:var(--sun);padding:32px 16px;color:var(--ink)}
 
 /* Phone entry layout: larger branding, lower form content, and a raised CTA. */
 .ripple-app .phone-entry-screen .wordmark-large {
-  width: 300px !important;
-  height: 200px !important;
+  width: 340px !important;
+  height: 220px !important;
+  max-width: none !important;
   margin-top: 26px !important;
   margin-bottom: 16px !important;
 }
