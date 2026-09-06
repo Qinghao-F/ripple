@@ -113,4 +113,118 @@ app.addEventListener('click', (event) => { const target = event.target.closest('
 const renderExistingSheet = renderSheet;
 renderSheet = function renderSheetWithCountryPicker() { if (state.sheet === 'dob') return ''; if (state.sheet === 'country') return `<div class="sheet-backdrop"><section class="sheet country-picker-sheet" role="dialog" aria-modal="true" aria-labelledby="country-picker-title"><div class="sheet-title-row"><h2 id="country-picker-title">Choose a country code</h2><button class="icon-button" data-action="close-sheet" aria-label="Close country code picker">${icon('cancel')}</button></div><p>Choose the number format for your phone.</p>${['+61','+1','+44'].map((country) => `<button class="option ${state.countryCode === country ? 'active' : ''}" data-action="country-choice" data-country="${country}"><span>${country}</span><i class="iconoir-check check"></i></button>`).join('')}</section></div>`; return renderExistingSheet(); };
 
+/* Standalone activity-poster flow. The poster card itself keeps its existing markup and styles. */
+const renderActivityPosterCard = renderGenerator;
+renderGenerator = function renderPosterLauncher() {
+  return `<div class="poster-generator"><b>Poster generation</b><p>${state.generated ? 'Your activity poster is ready.' : 'Create a poster using the existing Ripple activity artwork.'}</p>${primary(state.generated ? 'View Poster' : 'Generate Poster', state.generated ? 'open-poster' : 'generate-poster', state.generating ? 'loading' : '')}</div>`;
+};
+
+function renderActivityPosterScreen() {
+  return `<main class="screen create-screen poster-screen">${header('Create')}<section class="create-panel">${renderActivityPosterCard(Boolean(state.editingId))}</section>${bottomNav('create')}</main>`;
+}
+
+const renderWithoutPosterScreen = render;
+render = function renderWithPosterScreen() {
+  if (state.screen === 'poster') {
+    app.innerHTML = `${renderActivityPosterScreen()}${renderSheet()}`;
+    return;
+  }
+  renderWithoutPosterScreen();
+};
+
+app.addEventListener('click', (event) => {
+  const target = event.target.closest('[data-action]');
+  if (!target || target.disabled) return;
+  const action = target.dataset.action;
+
+  if (action === 'generate-poster') {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if (!validateForm()) {
+      render();
+      return;
+    }
+    const alreadyOnPoster = state.screen === 'poster';
+    state.generating = true;
+    render();
+    window.setTimeout(() => {
+      state.generating = false;
+      state.generated = true;
+      state.posterImage = categoryImages[state.form.category] || 'coffee-social.png';
+      state.posterVariant += 1;
+      if (!alreadyOnPoster) state.posterBack = 'form';
+      state.screen = 'poster';
+      notify('Poster generated from Ripple library artwork.');
+      render();
+    }, 650);
+    return;
+  }
+
+  if (action === 'open-poster') {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    state.posterBack = 'form';
+    state.screen = 'poster';
+    render();
+    return;
+  }
+
+  if (action === 'open-post') {
+    const post = state.posts.find((item) => item.id === target.dataset.id);
+    if (!post?.draft) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    state.editingId = post.id;
+    state.form = { title: post.title, description: 'A relaxed creative walk around a broad local area.', category: 'Creative', date: '2026-04-27', time: '10:00', area: 'Fitzroy', capacity: 4, costMode: 'Free', cost: '' };
+    state.generated = true;
+    state.posterImage = post.image;
+    state.posterBack = 'posts';
+    state.screen = 'poster';
+    render();
+    return;
+  }
+
+  if (state.screen !== 'poster') return;
+
+  if (action === 'back') {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    state.screen = 'create';
+    state.createTab = state.posterBack === 'posts' ? 'posts' : 'new';
+    if (state.posterBack === 'posts') state.editingId = null;
+    render();
+    return;
+  }
+
+  if (action === 'preview') {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const id = 'preview';
+    activities[id] = { id, title: state.form.title, image: state.posterImage || categoryImages[state.form.category] || 'coffee-social.png', date: state.form.date, time: state.form.time, area: state.form.area, cost: state.form.costMode === 'Free' ? 'Free' : `$${state.form.cost}`, joined: 1, capacity: state.form.capacity, host: state.identity.name, hostColor: 'f5b092', description: state.form.description, preview: true };
+    openDetail(id, 'poster');
+    return;
+  }
+
+  if (action === 'save-changes') {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if (!validateForm()) {
+      render();
+      return;
+    }
+    const post = state.posts.find((item) => item.id === state.editingId);
+    if (post) {
+      post.title = state.form.title;
+      post.date = state.form.date;
+      post.image = state.posterImage;
+      post.status = 'Draft';
+    }
+    state.editingId = null;
+    state.createTab = 'posts';
+    state.screen = 'create';
+    notify('Draft saved.');
+    render();
+  }
+}, true);
+
 render();
