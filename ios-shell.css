@@ -235,6 +235,28 @@ body { padding: 24px 16px; background: var(--sun); }
 .ripple-app .bottom-nav button { min-width: 44px; min-height: 44px; }
 .ripple-app .toast { pointer-events: none; }
 
+/* Keep the confirmation copy and both choices in their natural reading order. */
+.ripple-app .sheet:has([data-action="contacts-allow"]),
+.ripple-app .sheet:has([data-action="confirm-join"]) {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  padding: 24px 16px 26px;
+}
+.ripple-app .sheet:has([data-action="contacts-allow"]) p,
+.ripple-app .sheet:has([data-action="confirm-join"]) p {
+  min-height: 34px;
+}
+.ripple-app .sheet:has([data-action="contacts-allow"]) .primary-action,
+.ripple-app .sheet:has([data-action="confirm-join"]) .primary-action,
+.ripple-app .sheet:has([data-action="contacts-allow"]) .secondary-action,
+.ripple-app .sheet:has([data-action="confirm-join"]) .secondary-action {
+  width: 100% !important;
+  height: 52px;
+  min-height: 52px;
+  margin: 0;
+  transform: none !important;
+}
+
 /* Map frame 8: match the Figma section geometry while keeping iOS hit areas. */
 .ripple-app .map-view {
   height: 578px;
