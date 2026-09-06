@@ -30,7 +30,7 @@ const activities = {
 };
 
 const state = {
-  screen: 'phone', phoneMode: 'entry', phone: '', otp: ['', '', '', '', '', ''], phoneError: '', resend: 12,
+  screen: 'welcome', phoneMode: 'entry', phone: '', otp: ['', '', '', '', '', ''], phoneError: '', resend: 12,
   identity: { name: 'Blue Koala', avatarSeed: 'BlueKoala' }, identityIndex: 0, avatarIndex: 0, dob: '', gender: '', basicError: '', interests: new Set(),
   discoverView: 'poster', filter: 'Trending', feedState: 'initial', feedExtra: false, selectedActivity: 'coffee', detailBack: 'discover',
   joined: new Set(), currentChat: 'coffee', chatFilter: 'All', countryCode: '+61', messages: {}, sheet: null,
@@ -51,6 +51,14 @@ function bottomNav(active) { return `<nav class="bottom-nav" aria-label="Main na
 function header(title, back = true, right = '') { return `<header class="screen-header">${back ? `<button data-action="back" aria-label="Back">${icon('nav-arrow-left')}</button>` : '<button class="icon-button" aria-hidden="true" tabindex="-1"></button>'}<h1>${title}</h1>${right || '<button class="icon-button" aria-hidden="true" tabindex="-1"></button>'}</header>`; }
 function topDiscover(view) { return `<div class="segmented swipe-tabs discover-tabs" data-tabs="discover" role="tablist"><button class="${view === 'poster' ? 'active' : ''}" data-action="discover-tab" data-view="poster" role="tab">Poster Board</button><button class="${view === 'map' ? 'active' : ''}" data-action="discover-tab" data-view="map" role="tab">Map</button><button class="${view === 'plans' ? 'active' : ''}" data-action="discover-tab" data-view="plans" role="tab">My Plans</button></div>`; }
 function filters() { const action = state.discoverView === 'map' ? 'map-filter' : 'filter'; const items = [['For You','sparkle'],['Food','food'],['Outdoors','mountain'],['Trending','fire'],['Explore','compass']]; return `<div class="filter-row" role="group" aria-label="Activity filters">${items.map(([name, glyph]) => `<button class="${state.filter === name ? 'active' : ''}" data-action="${action}" data-filter="${name}"><span class="filter-orb">${posterIcon(glyph)}</span><span>${name}</span></button>`).join('')}</div>`; }
+
+function renderWelcome() {
+  return `<main class="screen welcome-image-screen" aria-label="Ripple welcome">
+    <img class="welcome-reference" src="${asset('ripple-welcome-reference.png')}" alt="Ripple welcome: Real activities. Anonymous people. Brighter days." />
+    <button class="welcome-hit-area welcome-skip" data-action="skip-onboarding" aria-label="Skip introduction"><span class="sr-only">Skip</span></button>
+    <button class="welcome-hit-area welcome-start" data-action="start-phone" aria-label="Get started"><span class="sr-only">Get Started</span></button>
+  </main>`;
+}
 
 function renderPhone() {
   const verification = state.phoneMode === 'verify';
@@ -283,4 +291,16 @@ app.addEventListener('click', (event) => {
   }
 }, true);
 
-render();
+if (state.screen === 'welcome') {
+  app.innerHTML = renderWelcome();
+} else {
+  render();
+}
+
+app.addEventListener('click', (event) => {
+  const target = event.target.closest('[data-action="start-phone"], [data-action="skip-onboarding"]');
+  if (!target) return;
+  state.phoneMode = 'entry';
+  state.phoneError = '';
+  navigate('phone');
+});

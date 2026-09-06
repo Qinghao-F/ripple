@@ -1,0 +1,63 @@
+.welcome-image-screen {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  background: var(--cream);
+}
+
+.welcome-reference {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.welcome-hit-area {
+  position: absolute;
+  z-index: 2;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+.welcome-hit-area:focus-visible {
+  outline: 3px solid rgba(240, 74, 47, 0.55);
+  outline-offset: -3px;
+}
+
+.welcome-skip {
+  top: 3%;
+  right: 3%;
+  width: 24%;
+  height: 8%;
+}
+
+.welcome-start {
+  right: 7%;
+  bottom: 10.5%;
+  left: 7%;
+  height: 8.5%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
