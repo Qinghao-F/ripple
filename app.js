@@ -230,7 +230,7 @@ app.addEventListener('click', (event) => {
 const renderSheetWithoutJoinConfirmation = renderSheet;
 renderSheet = function renderSheetWithJoinConfirmation() {
   if (state.sheet === 'confirm-join') {
-    return `<div class="sheet-backdrop"><section class="sheet join-confirmation-sheet" role="dialog" aria-modal="true" aria-labelledby="confirm-join-title"><h2 id="confirm-join-title">Join this activity?</h2><p>After confirming, you’ll join this activity and be redirected to group discussion.</p>${primary('Confirm & Join', 'confirm-join')}${secondary('Not now', 'close-sheet')}</section></div>`;
+    return `<div class="sheet-backdrop"><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="confirm-join-title"><h2 id="confirm-join-title">Join this activity?</h2><p>After confirming, you’ll join this activity and be redirected to group discussion.</p>${primary('Confirm & Join', 'confirm-join')}${secondary('Not now', 'close-sheet')}</section></div>`;
   }
   return renderSheetWithoutJoinConfirmation();
 };
