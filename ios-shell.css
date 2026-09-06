@@ -127,13 +127,24 @@ body { padding: 24px 16px; background: var(--sun); }
 .ripple-app input[type="date"] { color-scheme: light; appearance: auto; }
 .ripple-app .welcome .primary-action,
 .ripple-app .form-foot .primary-action { width: 100%; max-width: 100%; box-sizing: border-box; }
-.ripple-app .welcome .wordmark-large { width: 220px; height: 104px; margin-top: 32px; margin-bottom: 8px; }
-.ripple-app .welcome h1 { margin-top: 20px; }
-.ripple-app .welcome .form-stack { margin-top: 32px; }
+.ripple-app .welcome .wordmark-large { width: 236px; height: 112px; margin-top: 36px; margin-bottom: 12px; }
+.ripple-app .welcome h1 { margin-top: 24px; }
+.ripple-app .welcome .form-stack { margin-top: 36px; }
 .ripple-app .welcome .form-foot { padding-top: 16px; }
-.ripple-app .welcome .privacy-copy { margin-bottom: 16px; }
+.ripple-app .welcome .privacy-copy { margin-bottom: 24px; }
 .ripple-app .verification-screen .form-stack > .text-action { align-self: flex-start; }
 .ripple-app .phone-entry-screen .form-stack > .text-action { align-self: center; }
+
+/* Onboarding keeps its explanation at the top and its decisions in the easy-to-reach lower half. */
+.ripple-app .onboarding-scroll { padding-top: 32px; padding-bottom: 24px; }
+.ripple-app .onboarding-scroll .intro-copy { margin-top: 20px; }
+.ripple-app .onboarding-scroll .form-stack { margin-top: 32px; }
+.ripple-app .onboarding-scroll .identity-card { margin-top: 32px; }
+.ripple-app .onboarding-scroll .bubble-field { margin-top: 32px; }
+.ripple-app .onboarding-scroll .form-foot { padding-top: 24px; }
+.ripple-app .contacts-scroll .illustration { margin-top: 18px; margin-bottom: 28px; }
+.ripple-app .contacts-scroll .permission-copy { margin-top: 22px; }
+.ripple-app .contacts-scroll .form-foot { margin-top: 32px; }
 .ripple-app .otp { width: 100%; min-width: 0; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; }
 .ripple-app .otp input { width: 100%; min-width: 0; max-width: 100%; box-sizing: border-box; padding: 0; font-size: 17px; }
 .ripple-app .date-field input { min-height: 48px; font-size: 17px; }
