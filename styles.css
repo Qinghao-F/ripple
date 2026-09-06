@@ -97,6 +97,7 @@ body{min-height:100vh;background:var(--sun);padding:32px 16px;color:var(--ink)}
 .ripple-app .contacts-scroll .form-foot,
 .ripple-app .basic-screen .form-foot,
 .ripple-app .interests-screen .form-foot,
+.ripple-app .onboarding-scroll:has([data-action="identity-continue"]) .form-foot,
 .ripple-app .sheet .primary-action {
   transform: translateY(-28px);
 }
@@ -115,7 +116,8 @@ body{min-height:100vh;background:var(--sun);padding:32px 16px;color:var(--ink)}
 }
 
 .ripple-app .onboarding-scroll:has([data-action="basic-continue"]) .form-foot .primary-action,
-.ripple-app .onboarding-scroll:has([data-action="interests-continue"]) .form-foot .primary-action {
+.ripple-app .onboarding-scroll:has([data-action="interests-continue"]) .form-foot .primary-action,
+.ripple-app .onboarding-scroll:has([data-action="identity-continue"]) .form-foot .primary-action {
   width: 100% !important;
   box-sizing: border-box;
 }
