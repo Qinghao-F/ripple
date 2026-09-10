@@ -6,9 +6,9 @@ Ripple is an activity-first social app prototype that makes it easier to turn sh
 
 Users can discover, create, and join activities such as coffee catch-ups, walks, concerts, and community workshops—then get to know fellow attendees in an anonymous group chat before meeting in person.
 
-[Try the live demo](https://qinghao-f.github.io/ripple/) · [View the Devpost submission](https://devpost.com/software/ripple-vdryb5) · [Explore the component library](https://ripple-component-library.qhfang32.chatgpt.site) · [Open the Figma design](https://www.figma.com/design/Lj6YarTkYiHFfibWnEYtZX/WIT?node-id=0-1&t=QWelUHROx1NUUdIp-1)
+[Try the live demo](https://qinghao-f.github.io/ripple/) · [Explore the component library](https://ripple-component-library.qhfang32.chatgpt.site) · [Open the Figma design](https://www.figma.com/design/Lj6YarTkYiHFfibWnEYtZX/WIT?node-id=0-1&t=QWelUHROx1NUUdIp-1)
 
-![Ripple onboarding flow](assets/screenshots/gallery.jpg)
+![Ripple app flow](assets/screenshots/ripple-gallery.gif)
 
 ## The idea
 
@@ -24,8 +24,6 @@ Ripple is designed to lower that barrier through shared context. Contact connect
 - **Create and promote plans.** Members and community organisers can publish activities, generate a poster, preview it, and manage their own posts.
 - **Start conversations with a purpose.** Each activity has an anonymous group chat, suggested replies, and a shared reason to talk before the event.
 
-![Discover, map, and plan views](assets/screenshots/gallery-2.jpg)
-
 ## Privacy and safety by design
 
 Ripple explores a gradual approach to social discovery:
@@ -34,8 +32,6 @@ Ripple explores a gradual approach to social discovery:
 - **Location unfolds over time:** an activity card shows only an approximate location; the precise meeting place is shared in the group chat after joining.
 - **Safer first-time hosting:** first-time organisers are limited to public venues.
 - **Community controls:** reporting, blocking, and leave-activity flows help users manage unwanted behaviour and contact.
-
-![Create and manage activities](assets/screenshots/gallery-3.jpg)
 
 ## Prototype walkthrough
 
@@ -46,8 +42,6 @@ The interactive demo includes:
 3. Activity detail, join confirmation, calendar, and plan-management screens.
 4. Activity creation, poster generation, preview, and publishing flows.
 5. Anonymous group chats, quick-reply suggestions, cancellation states, and moderation controls.
-
-![Activity group chats and moderation flows](assets/screenshots/gallery-4.jpg)
 
 ## How we built it
 
