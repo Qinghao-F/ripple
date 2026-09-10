@@ -30,7 +30,7 @@ Ripple explores a gradual approach to social discovery:
 
 - **Anonymous but relevant:** contacts can help make recommendations socially meaningful, without exposing names, phone numbers, or relationship paths.
 - **Location unfolds over time:** an activity card shows only an approximate location; the precise meeting place is shared in the group chat after joining.
-- **Safer first-time hosting:** first-time organisers are limited to public venues.
+- **Safer first-time hosting:** organisers are limited to public venues.
 - **Community controls:** reporting, blocking, and leave-activity flows help users manage unwanted behaviour and contact.
 
 ## Prototype walkthrough
@@ -88,8 +88,6 @@ To enter the demo, use:
 ## What’s next
 
 The next step is to test whether an activity-first, anonymous-but-relevant experience makes people more willing to join plans they might otherwise hesitate to attend. We also want to expand from small member-created plans into concerts, exhibitions, and other events already happening around the city.
-
-Today you join a plan. Tomorrow, you might start one.
 
 ## Credits
 
