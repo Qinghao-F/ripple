@@ -10,6 +10,12 @@ Users can discover, create, and join activities such as coffee catch-ups, walks,
 
 ![Ripple app flow](assets/screenshots/ripple-gallery.gif)
 
+## Demo video
+
+[![Watch the Ripple demo on YouTube](https://img.youtube.com/vi/PwGKubSKnZ8/0.jpg)](https://youtu.be/PwGKubSKnZ8)
+
+[Watch the Ripple demo on YouTube](https://youtu.be/PwGKubSKnZ8)
+
 ## The idea
 
 Cities are becoming denser, yet social life can still feel isolating. Even when people want to meet others, the first step—who to ask, what to say, whether it will feel awkward—can become an invisible barrier.
